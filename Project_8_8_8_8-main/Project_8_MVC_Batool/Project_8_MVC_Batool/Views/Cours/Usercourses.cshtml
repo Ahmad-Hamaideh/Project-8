@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.Cours>
+
+<div class="container col-8" style="width:88%!important ; margin:20px 50px ">
+
+
+    <style>
+        table tr td {
+            width: 33%;
+            margin:0 20px;
+        }
+    </style>
+    @{
+        ViewBag.Title = "Usercourses";
+        Layout = "~/Views/Shared/_DashBoardUser.cshtml";
+
+    }
+    <br />
+    <br />
+    <h4>Your Courses</h4>
+    <br />
+
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                <p>Course Name</p>
+            </th>
+            <th>
+                <p>Number of Hours</p>
+            </th>
+            <th>
+                <p>Major Name</p>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number_OfHour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Major.MajorName)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

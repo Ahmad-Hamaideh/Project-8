@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09FF0980-2624-47D6-B18B-A69CEEA10FAC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project_8_MVC_Batool</RootNamespace>
+    <AssemblyName>Project_8_MVC_Batool</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.2.2\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.2\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.2\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.2.2\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.2.2\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.2\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
+    <Compile Include="Controllers\CoursController.cs" />
+    <Compile Include="Controllers\DelaysController.cs" />
+    <Compile Include="Controllers\FacultiesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MajorsController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
+    <Compile Include="Controllers\TimesController.cs" />
+    <Compile Include="Cours.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InRolement.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Major.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\statisticss.cs" />
+    <Compile Include="Payment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rahma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Time.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="academics-master\about.html" />
+    <Content Include="academics-master\admissions.html" />
+    <Content Include="academics-master\contact.html" />
+    <Content Include="academics-master\course-single.html" />
+    <Content Include="academics-master\courses.html" />
+    <Content Include="academics-master\css\aos.css" />
+    <Content Include="academics-master\css\bootstrap-datepicker.css" />
+    <Content Include="academics-master\css\bootstrap.min.css" />
+    <Content Include="academics-master\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="academics-master\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="academics-master\css\jquery-ui.css" />
+    <Content Include="academics-master\css\jquery.fancybox.min.css" />
+    <Content Include="academics-master\css\jquery.mb.YTPlayer.min.css" />
+    <Content Include="academics-master\css\magnific-popup.css" />
+    <Content Include="academics-master\css\mediaelementplayer.css" />
+    <Content Include="academics-master\css\owl.carousel.min.css" />
+    <Content Include="academics-master\css\owl.theme.default.min.css" />
+    <Content Include="academics-master\css\style.css" />
+    <Content Include="academics-master\fonts\flaticon\backup.txt" />
+    <Content Include="academics-master\fonts\flaticon\font\flaticon.css" />
+    <Content Include="academics-master\fonts\flaticon\font\flaticon.html" />
+    <Content Include="academics-master\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="academics-master\fonts\flaticon\font\_flaticon.css" />
+    <Content Include="academics-master\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="academics-master\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="academics-master\fonts\icomoon\demo.html" />
+    <Content Include="academics-master\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="academics-master\fonts\icomoon\Read Me.txt" />
+    <Content Include="academics-master\fonts\icomoon\style.css" />
+    <Content Include="academics-master\images\bg_1.jpg" />
+    <Content Include="academics-master\images\blog_1.jpg" />
+    <Content Include="academics-master\images\blog_2.jpg" />
+    <Content Include="academics-master\images\blog_large_1.jpg" />
+    <Content Include="academics-master\images\course_1.jpg" />
+    <Content Include="academics-master\images\course_2.jpg" />
+    <Content Include="academics-master\images\course_3.jpg" />
+    <Content Include="academics-master\images\course_4.jpg" />
+    <Content Include="academics-master\images\course_5.jpg" />
+    <Content Include="academics-master\images\course_6.jpg" />
+    <Content Include="academics-master\images\hero_1.jpg" />
+    <Content Include="academics-master\images\logo.jpg" />
+    <Content Include="academics-master\images\logo.png" />
+    <Content Include="academics-master\images\person_1.jpg" />
+    <Content Include="academics-master\images\person_2.jpg" />
+    <Content Include="academics-master\images\person_3.jpg" />
+    <Content Include="academics-master\images\person_4.jpg" />
+    <Content Include="academics-master\index.html" />
+    <Content Include="academics-master\js\aos.js" />
+    <Content Include="academics-master\js\bootstrap-datepicker.min.js" />
+    <Content Include="academics-master\js\bootstrap.min.js" />
+    <Content Include="academics-master\js\jquery-3.3.1.min.js" />
+    <Content Include="academics-master\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="academics-master\js\jquery-ui.js" />
+    <Content Include="academics-master\js\jquery.countdown.min.js" />
+    <Content Include="academics-master\js\jquery.easing.1.3.js" />
+    <Content Include="academics-master\js\jquery.fancybox.min.js" />
+    <Content Include="academics-master\js\jquery.magnific-popup.min.js" />
+    <Content Include="academics-master\js\jquery.mb.YTPlayer.min.js" />
+    <Content Include="academics-master\js\jquery.stellar.min.js" />
+    <Content Include="academics-master\js\jquery.sticky.js" />
+    <Content Include="academics-master\js\main.js" />
+    <Content Include="academics-master\js\mediaelement-and-player.min.js" />
+    <Content Include="academics-master\js\owl.carousel.min.js" />
+    <Content Include="academics-master\js\popper.min.js" />
+    <Content Include="academics-master\js\slick.min.js" />
+    <Content Include="academics-master\js\typed.js" />
+    <Content Include="academics-master\login.html" />
+    <Content Include="academics-master\news-single.html" />
+    <Content Include="academics-master\register.html" />
+    <Content Include="cleopatra\.gitattributes" />
+    <Content Include="cleopatra\.gitignore" />
+    <Content Include="cleopatra\dist\alert.html" />
+    <Content Include="cleopatra\dist\blank.html" />
+    <Content Include="cleopatra\dist\buttons.html" />
+    <Content Include="cleopatra\dist\css\style.css" />
+    <Content Include="cleopatra\dist\email.html" />
+    <Content Include="cleopatra\dist\img\congrats.svg" />
+    <Content Include="cleopatra\dist\img\fav.png" />
+    <Content Include="cleopatra\dist\img\food.svg" />
+    <Content Include="cleopatra\dist\img\happy.svg" />
+    <Content Include="cleopatra\dist\img\index-1.png" />
+    <Content Include="cleopatra\dist\img\index.png" />
+    <Content Include="cleopatra\dist\img\logo.png" />
+    <Content Include="cleopatra\dist\img\sneakers.svg" />
+    <Content Include="cleopatra\dist\img\soccer.svg" />
+    <Content Include="cleopatra\dist\img\socks.svg" />
+    <Content Include="cleopatra\dist\img\tailwindcss.svg" />
+    <Content Include="cleopatra\dist\img\user.svg" />
+    <Content Include="cleopatra\dist\img\user1.jpg" />
+    <Content Include="cleopatra\dist\img\user2.jpg" />
+    <Content Include="cleopatra\dist\img\user3.jpg" />
+    <Content Include="cleopatra\dist\index-1.html" />
+    <Content Include="cleopatra\dist\index.html" />
+    <Content Include="cleopatra\dist\js\scripts.js" />
+    <Content Include="cleopatra\dist\typography.html" />
+    <Content Include="cleopatra\gulpfile.js" />
+    <Content Include="cleopatra\src\css\external\prism.css" />
+    <Content Include="cleopatra\src\img\congrats.svg" />
+    <Content Include="cleopatra\src\img\fav.png" />
+    <Content Include="cleopatra\src\img\food.svg" />
+    <Content Include="cleopatra\src\img\happy.svg" />
+    <Content Include="cleopatra\src\img\index-1.png" />
+    <Content Include="cleopatra\src\img\index.png" />
+    <Content Include="cleopatra\src\img\logo.png" />
+    <Content Include="cleopatra\src\img\sneakers.svg" />
+    <Content Include="cleopatra\src\img\soccer.svg" />
+    <Content Include="cleopatra\src\img\socks.svg" />
+    <Content Include="cleopatra\src\img\tailwindcss.svg" />
+    <Content Include="cleopatra\src\img\user.svg" />
+    <Content Include="cleopatra\src\img\user1.jpg" />
+    <Content Include="cleopatra\src\img\user2.jpg" />
+    <Content Include="cleopatra\src\img\user3.jpg" />
+    <Content Include="cleopatra\src\js\base\alert.js" />
+    <Content Include="cleopatra\src\js\base\dropdown.js" />
+    <Content Include="cleopatra\src\js\base\name.js" />
+    <Content Include="cleopatra\src\js\base\navbar.js" />
+    <Content Include="cleopatra\src\js\base\num.js" />
+    <Content Include="cleopatra\src\js\base\sidebar.js" />
+    <Content Include="cleopatra\src\js\charts\analytics_1.js" />
+    <Content Include="cleopatra\src\js\charts\salesOverview.js" />
+    <Content Include="cleopatra\src\js\charts\summary.js" />
+    <Content Include="cleopatra\src\js\external\prism.js" />
+    <Content Include="cleopatra\src\views\alert.html" />
+    <Content Include="cleopatra\src\views\base\end.html" />
+    <Content Include="cleopatra\src\views\base\navbar.html" />
+    <Content Include="cleopatra\src\views\base\sidebar.html" />
+    <Content Include="cleopatra\src\views\base\start.html" />
+    <Content Include="cleopatra\src\views\blank.html" />
+    <Content Include="cleopatra\src\views\buttons.html" />
+    <Content Include="cleopatra\src\views\email.html" />
+    <Content Include="cleopatra\src\views\email\email-body.html" />
+    <Content Include="cleopatra\src\views\email\email-links.html" />
+    <Content Include="cleopatra\src\views\index-1.html" />
+    <Content Include="cleopatra\src\views\index.html" />
+    <Content Include="cleopatra\src\views\index\analytics-1.html" />
+    <Content Include="cleopatra\src\views\index\bestSeller.html" />
+    <Content Include="cleopatra\src\views\index\congrats.html" />
+    <Content Include="cleopatra\src\views\index\generalReport.html" />
+    <Content Include="cleopatra\src\views\index\numbers.html" />
+    <Content Include="cleopatra\src\views\index\quickInfo.html" />
+    <Content Include="cleopatra\src\views\index\recent_order.html" />
+    <Content Include="cleopatra\src\views\index\salesOverview.html" />
+    <Content Include="cleopatra\src\views\index\status.html" />
+    <Content Include="cleopatra\src\views\index\summary.html" />
+    <Content Include="cleopatra\src\views\typography.html" />
+    <Content Include="cleopatra\src\views\ui\alert\alert_1.html" />
+    <Content Include="cleopatra\src\views\ui\alert\alert_2.html" />
+    <Content Include="cleopatra\src\views\ui\alert\alert_3.html" />
+    <Content Include="cleopatra\src\views\ui\alert\head.html" />
+    <Content Include="cleopatra\src\views\ui\buttons\1_btns.html" />
+    <Content Include="cleopatra\src\views\ui\buttons\2_btns.html" />
+    <Content Include="cleopatra\src\views\ui\buttons\head.html" />
+    <Content Include="cleopatra\src\views\ui\typography\head.html" />
+    <Content Include="cleopatra\src\views\ui\typography\heading_1.html" />
+    <Content Include="cleopatra\tailwind.config.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\error.css" />
+    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
+    <Content Include="Content\sweetalert\docs.css" />
+    <Content Include="Content\sweetalert\sweet-alert.css" />
+    <Content Include="Content\sweetalert\thumbs-up.jpg" />
+    <Content Include="dash\404.html" />
+    <Content Include="dash\blank.html" />
+    <Content Include="dash\bootstrap-admin-template-free.jpg" />
+    <Content Include="dash\button.html" />
+    <Content Include="dash\chart.html" />
+    <Content Include="dash\css\bootstrap.min.css" />
+    <Content Include="dash\css\style.css" />
+    <Content Include="dash\element.html" />
+    <Content Include="dash\form.html" />
+    <Content Include="dash\img\testimonial-1.jpg" />
+    <Content Include="dash\img\testimonial-2.jpg" />
+    <Content Include="dash\img\user.jpg" />
+    <Content Include="dash\index.html" />
+    <Content Include="dash\js\main.js" />
+    <Content Include="dash\lib\chart\chart.min.js" />
+    <Content Include="dash\lib\easing\easing.js" />
+    <Content Include="dash\lib\easing\easing.min.js" />
+    <Content Include="dash\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="dash\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="dash\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="dash\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="dash\lib\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="dash\lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="dash\lib\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="dash\lib\tempusdominus\js\moment.min.js" />
+    <Content Include="dash\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="dash\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="dash\lib\waypoints\links.php" />
+    <Content Include="dash\lib\waypoints\waypoints.min.js" />
+    <Content Include="dash\LICENSE.txt" />
+    <Content Include="dash\READ-ME.txt" />
+    <Content Include="dash\signin.html" />
+    <Content Include="dash\signup.html" />
+    <Content Include="dash\table.html" />
+    <Content Include="dash\typography.html" />
+    <Content Include="dash\widget.html" />
+    <Content Include="Views\Shared\error.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="cleopatra\.git\COMMIT_EDITMSG" />
+    <Content Include="cleopatra\.git\config" />
+    <Content Include="cleopatra\.git\description" />
+    <Content Include="cleopatra\.git\FETCH_HEAD" />
+    <Content Include="cleopatra\.git\HEAD" />
+    <Content Include="cleopatra\.git\hooks\applypatch-msg.sample" />
+    <Content Include="cleopatra\.git\hooks\commit-msg.sample" />
+    <Content Include="cleopatra\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="cleopatra\.git\hooks\post-update.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-applypatch.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-commit.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-push.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-rebase.sample" />
+    <Content Include="cleopatra\.git\hooks\pre-receive.sample" />
+    <Content Include="cleopatra\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="cleopatra\.git\hooks\update.sample" />
+    <Content Include="cleopatra\.git\index" />
+    <Content Include="cleopatra\.git\info\exclude" />
+    <Content Include="cleopatra\.git\logs\HEAD" />
+    <Content Include="cleopatra\.git\logs\refs\heads\main" />
+    <Content Include="cleopatra\.git\logs\refs\remotes\origin\main" />
+    <Content Include="cleopatra\.git\objects\00\80f82d6a26bb4324af1300cebbb1ee467b6700" />
+    <Content Include="cleopatra\.git\objects\01\2f0e885832a3ef4208886eb380971597e38500" />
+    <Content Include="cleopatra\.git\objects\05\1ccd17f427c0335cd53cc095cf4258fb7b96a5" />
+    <Content Include="cleopatra\.git\objects\09\55e8fbcf9efaa21f9801037c9c462b7f29d548" />
+    <Content Include="cleopatra\.git\objects\0b\7d0e876bfc6d3eae4d8919d65f3305eb3f36a1" />
+    <Content Include="cleopatra\.git\objects\0b\ecb706ca1c79ad05caa36fdbe706c757ee2e98" />
+    <Content Include="cleopatra\.git\objects\0c\558d78ce18c4bb073411cdfdeb75a624525c3c" />
+    <Content Include="cleopatra\.git\objects\0d\ac7bc856612dea9ab261f1735bf26e684a3ad8" />
+    <Content Include="cleopatra\.git\objects\0d\e7eb46dd0de0afb2968ba19f276d0e7f0e4bb7" />
+    <Content Include="cleopatra\.git\objects\10\b02653147a1bc1bb1922f776380db52a463a15" />
+    <Content Include="cleopatra\.git\objects\18\fffbae2e70ce902fae174638ddaeae2aab4309" />
+    <Content Include="cleopatra\.git\objects\1a\f5cc2c5da2db7fbecb06b4fadb269e284c3711" />
+    <Content Include="cleopatra\.git\objects\1c\7af32faf1b5f71687562cbb249102aae6bce75" />
+    <Content Include="cleopatra\.git\objects\23\5a4f88be68df226844f1523eeef2810bbb10e1" />
+    <Content Include="cleopatra\.git\objects\25\c8fdbaba62c31aacfa2307975b06fbfd017485" />
+    <Content Include="cleopatra\.git\objects\26\d3cf859e220dc594f2b54d2232e81e8f05ec9d" />
+    <Content Include="cleopatra\.git\objects\27\ed577d291aa50915a5be6778b1a568e9f70285" />
+    <Content Include="cleopatra\.git\objects\29\7071d972c79764ba659d5a30f16877c96bdeca" />
+    <Content Include="cleopatra\.git\objects\2b\1f276918011b3a75d0224c7ceb95c915b2df1f" />
+    <Content Include="cleopatra\.git\objects\2b\f237e647c54ce3402609b727c50c11ed3e2997" />
+    <Content Include="cleopatra\.git\objects\2c\3b174ca408237a7beb8a1407592d7fd134ade5" />
+    <Content Include="cleopatra\.git\objects\2d\014917f127fe983e6818bee8e60fb3daa28cfe" />
+    <Content Include="cleopatra\.git\objects\2e\2e73d2116dd4406ef63dcbb1f0d4df4e6611ed" />
+    <Content Include="cleopatra\.git\objects\33\89c4b35953d845cb1009388607b91b6fca9082" />
+    <Content Include="cleopatra\.git\objects\33\ab929a3e50a222f82a056e143404d4f60acee2" />
+    <Content Include="cleopatra\.git\objects\34\689d792f07fa04b506b090f365a8c1b9fc3d57" />
+    <Content Include="cleopatra\.git\objects\36\a12e99d51c8e977ed51c5f2b8ccc2cbbcad8dc" />
+    <Content Include="cleopatra\.git\objects\36\efea1ea1b092ec4b65e4336bafec683b3c8479" />
+    <Content Include="cleopatra\.git\objects\38\9b672f65b31ec1e2f7058b20c24402556caff1" />
+    <Content Include="cleopatra\.git\objects\3a\490e96358dbd3b9bb247deaec48f77e8baf3eb" />
+    <Content Include="cleopatra\.git\objects\3a\e2d255e7830c17c72803ad85b76fb1512c598a" />
+    <Content Include="cleopatra\.git\objects\3e\47f91e409088aac27422f9b721f45d8b1ac951" />
+    <Content Include="cleopatra\.git\objects\40\9fb3991d71d0f4a2f98923c70394f1e7c8e0c8" />
+    <Content Include="cleopatra\.git\objects\45\4b84325b7e04e053e25c73183c1f335951845f" />
+    <Content Include="cleopatra\.git\objects\45\a45de24cf2926a8d27de911bc04ddcd1dda0cb" />
+    <Content Include="cleopatra\.git\objects\48\9b428b7b106b6e6e43d23f3e7b6c00bfc008d9" />
+    <Content Include="cleopatra\.git\objects\4a\60c4a448e7aec9049187e58a819cf1070536a2" />
+    <Content Include="cleopatra\.git\objects\4c\437d723cfe36462bc05d36bf99718aad1677cf" />
+    <Content Include="cleopatra\.git\objects\50\207397a3ec15cc64262c5ad52936aad998c69d" />
+    <Content Include="cleopatra\.git\objects\52\655a871faa39aef7f5234b221dd6ecb685489f" />
+    <Content Include="cleopatra\.git\objects\57\4953cb7c78322d496ec765290abee14fd39ee0" />
+    <Content Include="cleopatra\.git\objects\57\981100ae44e03d3cf1867aceb189dd04e66f1a" />
+    <Content Include="cleopatra\.git\objects\58\79f29d23b7e80e6e89afb154c899e1f5df5515" />
+    <Content Include="cleopatra\.git\objects\60\cc143014b77762a5a341734171b1133024f3bd" />
+    <Content Include="cleopatra\.git\objects\61\b1355dda6ede6ef6e5bcb954695cb7aff15592" />
+    <Content Include="cleopatra\.git\objects\63\de8ec71bf304e8eee802f6325c67dbe2c8f5ca" />
+    <Content Include="cleopatra\.git\objects\65\f35dc12d4118c6da8572d55cf0f4f9398394cd" />
+    <Content Include="cleopatra\.git\objects\6c\da810fc5ab89c2232af1125b3ed22fcb88eb2f" />
+    <Content Include="cleopatra\.git\objects\6c\eb1abfd21efab25f7d649c908315c51d8a1812" />
+    <Content Include="cleopatra\.git\objects\6d\f871fab4c204206f4bc70ea509da1689f70e76" />
+    <Content Include="cleopatra\.git\objects\6f\9509c88bed7080d496fc5e1d87a9315e30549d" />
+    <Content Include="cleopatra\.git\objects\70\7992417086164562aa4cfbc6bd88e9233060e8" />
+    <Content Include="cleopatra\.git\objects\74\c677f5ff31b2ca32bd4e3e13af5a5dd5bccd5a" />
+    <Content Include="cleopatra\.git\objects\75\4bd50d09af823e7753adfe8096134fcce30ec4" />
+    <Content Include="cleopatra\.git\objects\75\d4a8de33e75e195b5e20f4cdc6d785d2fd271b" />
+    <Content Include="cleopatra\.git\objects\76\e8b5a34944a22c9cf5399f002ed65e074d85b9" />
+    <Content Include="cleopatra\.git\objects\77\d8429c68a40beba2efa34c554676b87a45cfab" />
+    <Content Include="cleopatra\.git\objects\78\d85ecfdeb653892cf19b86dc1b49511c854450" />
+    <Content Include="cleopatra\.git\objects\7c\4da439224b7c6cb67584b4805d194fa1f61f9e" />
+    <Content Include="cleopatra\.git\objects\7d\579cd49405a294a1a1852b009a9c681174e246" />
+    <Content Include="cleopatra\.git\objects\80\58d64f3d4ef89e0b8913b5c88f268f19db05dd" />
+    <Content Include="cleopatra\.git\objects\85\7b8481128a9095a22abf50b05b863ccaa61a64" />
+    <Content Include="cleopatra\.git\objects\8d\315db75370dbcda43ed1eb9d8a14b62da28e22" />
+    <Content Include="cleopatra\.git\objects\8e\eba39ee55466c5d859a5b1cf8f41791b413db9" />
+    <Content Include="cleopatra\.git\objects\94\628ae058e73afb3435feacb2a2c341bb9e0101" />
+    <Content Include="cleopatra\.git\objects\97\bc4a24e47dd6a5fa01d88a640891a54f297964" />
+    <Content Include="cleopatra\.git\objects\9a\73a18e02b217381d89be09da8cd5cbe4627216" />
+    <Content Include="cleopatra\.git\objects\9b\4e8d48393ff3fa0b61a34d4f184f1e2ce2b0a1" />
+    <Content Include="cleopatra\.git\objects\9d\21816cdf26fd3bf626806625960d2f89d1549e" />
+    <Content Include="cleopatra\.git\objects\a4\802d33338d5668333778f29a48fc601988e6a4" />
+    <Content Include="cleopatra\.git\objects\a6\f45a8c55b301f4413ea5bd7847682efa220490" />
+    <Content Include="cleopatra\.git\objects\ab\12d6792087109c124a0f081a5a45a644abcca1" />
+    <Content Include="cleopatra\.git\objects\ab\53549a378eb8f8d6b40ec04441b55b849401b0" />
+    <Content Include="cleopatra\.git\objects\ae\12417ea1efd5a4cf6e97c18e8ffc29d1fd63c8" />
+    <Content Include="cleopatra\.git\objects\b0\1a4ced4a81fd074d1e3663daf5e9d4e3a6cedd" />
+    <Content Include="cleopatra\.git\objects\b2\a7f9a78ca8b19759c10a3dd48bf3ee603436c0" />
+    <Content Include="cleopatra\.git\objects\b3\3860b16c29ab1790565708dcd26500c9843195" />
+    <Content Include="cleopatra\.git\objects\b5\8d9bf906288df6712baa3547df7f4325d0eaa3" />
+    <Content Include="cleopatra\.git\objects\b5\a45679f32dcffc38417a46e729b89e41ca9a2d" />
+    <Content Include="cleopatra\.git\objects\b6\1a8271bc6768a15f5900a0807d6ce4da8cf8e7" />
+    <Content Include="cleopatra\.git\objects\b7\db23cd5136525ca99cbe615040c6d45358a487" />
+    <Content Include="cleopatra\.git\objects\bb\cbbe7d61558adde3cbfd0c7a63a67c27ed6d30" />
+    <Content Include="cleopatra\.git\objects\c1\7cc4ed8b19e62293ea618624d91585a657e3c6" />
+    <Content Include="cleopatra\.git\objects\c3\2b1771fbd972a7a21a2067247537d82cf2d25f" />
+    <Content Include="cleopatra\.git\objects\c4\425cff12196ada68fed88967a59904fa810cdc" />
+    <Content Include="cleopatra\.git\objects\c5\2074322ba2efca34769f830922f15d74a54523" />
+    <Content Include="cleopatra\.git\objects\c6\ab2ea7fc090063cf06e5acf8449f8472399182" />
+    <Content Include="cleopatra\.git\objects\ca\4bc92797650a602e7f256a185ac2d12f9bb2dc" />
+    <Content Include="cleopatra\.git\objects\cb\447e2c38de01ac383753ee1366fd6dfabf1616" />
+    <Content Include="cleopatra\.git\objects\cb\95f13aa50c13f75eea42e65d0cbd7601800913" />
+    <Content Include="cleopatra\.git\objects\cb\ae954a3683dac988414194e27b690f42d2d283" />
+    <Content Include="cleopatra\.git\objects\cc\4ebcf2af223bd4e113c6a77410c081fea79d5d" />
+    <Content Include="cleopatra\.git\objects\cd\a942d5ea26b96a7313359824e9d0687456a3f5" />
+    <Content Include="cleopatra\.git\objects\d0\2547b4505ca231a39776069fbf194d857e16ce" />
+    <Content Include="cleopatra\.git\objects\d5\c5a923b5053f5f52114e569fb444f6df879fd3" />
+    <Content Include="cleopatra\.git\objects\d6\bb286498e5a6524f78c9e4e71e348cdb7585ce" />
+    <Content Include="cleopatra\.git\objects\d8\b7b9070dfb3cee67cf2b5c190eead2a4d56b29" />
+    <Content Include="cleopatra\.git\objects\d9\19e2495907653c09206445ff76c043bde1168c" />
+    <Content Include="cleopatra\.git\objects\d9\875052ef3888d2687c2631cfecee11f844999d" />
+    <Content Include="cleopatra\.git\objects\dd\84ea7824f11be1eeda22377549cbc1aec7f980" />
+    <Content Include="cleopatra\.git\objects\de\04d7e63ac27383521fd535f9d0949a6b9d221b" />
+    <Content Include="cleopatra\.git\objects\df\e0770424b2a19faf507a501ebfc23be8f54e7b" />
+    <Content Include="cleopatra\.git\objects\e0\3167e823a7fe3e3243398e8db6bfc75c2303b6" />
+    <Content Include="cleopatra\.git\objects\e2\37e91361eb6d9c9b2386f7a1a66f8907b1169a" />
+    <Content Include="cleopatra\.git\objects\e3\cacc124f72f3f46472343385ac643bc0fa10ea" />
+    <Content Include="cleopatra\.git\objects\e9\61eb2b5d9170ed0a1f123ba7d56682a8f2f159" />
+    <Content Include="cleopatra\.git\objects\ed\a8a52749e7ea77d55e06630514779a326af571" />
+    <Content Include="cleopatra\.git\objects\ee\3e7b8ac3549c494a3b6b8eee2cf57a5581b2b5" />
+    <Content Include="cleopatra\.git\objects\f1\29e8c2f9a79eaf99d2a5f3e4d15c5915c12816" />
+    <Content Include="cleopatra\.git\objects\f3\3cad121defed1cb1355a73a0b914c1fdc25873" />
+    <Content Include="cleopatra\.git\objects\f4\a11cdca338048ccd06e9095d51934917c7c4fa" />
+    <Content Include="cleopatra\.git\objects\f8\134dc334dd14d12f2935417e3078e6fb682551" />
+    <Content Include="cleopatra\.git\objects\fb\28a4bebf8ec05f09bd9bf05267c8603ba634b6" />
+    <Content Include="cleopatra\.git\objects\fd\8624f09257a75c9f27a7961aa0019eb210e75b" />
+    <Content Include="cleopatra\.git\objects\fd\d1e39629c38512c5676316df5454292e17c24e" />
+    <Content Include="cleopatra\.git\objects\fe\625c87668e9464a367b0aea6929a5711cc54f1" />
+    <Content Include="cleopatra\.git\refs\heads\main" />
+    <Content Include="cleopatra\.git\refs\remotes\origin\main" />
+    <Content Include="cleopatra\CODE_OF_CONDUCT.md" />
+    <Content Include="cleopatra\CONTRIBUTING.md" />
+    <Content Include="cleopatra\LICENSE" />
+    <Content Include="cleopatra\package.json" />
+    <Content Include="cleopatra\README.md" />
+    <Content Include="cleopatra\src\css\app.sass" />
+    <Content Include="cleopatra\src\css\apply\_alert.sass" />
+    <Content Include="cleopatra\src\css\apply\_badge.sass" />
+    <Content Include="cleopatra\src\css\apply\_button.sass" />
+    <Content Include="cleopatra\src\css\apply\_card.sass" />
+    <Content Include="cleopatra\src\css\apply\_code.sass" />
+    <Content Include="cleopatra\src\css\apply\_typography.sass" />
+    <Content Include="cleopatra\src\css\index\_report-card.sass" />
+    <Content Include="cleopatra\src\css\_apply.sass" />
+    <Content Include="academics-master\css\.DS_Store" />
+    <Content Include="academics-master\css\bootstrap.min.css.map" />
+    <Content Include="academics-master\fonts\.DS_Store" />
+    <Content Include="academics-master\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="academics-master\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="academics-master\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="academics-master\fonts\flaticon\font\Flaticon.woff2" />
+    <Content Include="academics-master\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="academics-master\fonts\flaticon\license\license.pdf" />
+    <Content Include="academics-master\fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="academics-master\fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="academics-master\fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="academics-master\fonts\icomoon\selection.json" />
+    <Content Include="academics-master\images\.DS_Store" />
+    <Content Include="academics-master\scss\.DS_Store" />
+    <Content Include="academics-master\scss\bootstrap\.DS_Store" />
+    <Content Include="academics-master\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="academics-master\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="academics-master\scss\bootstrap\bootstrap.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="academics-master\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="academics-master\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="academics-master\scss\bootstrap\_alert.scss" />
+    <Content Include="academics-master\scss\bootstrap\_badge.scss" />
+    <Content Include="academics-master\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="academics-master\scss\bootstrap\_button-group.scss" />
+    <Content Include="academics-master\scss\bootstrap\_buttons.scss" />
+    <Content Include="academics-master\scss\bootstrap\_card.scss" />
+    <Content Include="academics-master\scss\bootstrap\_carousel.scss" />
+    <Content Include="academics-master\scss\bootstrap\_close.scss" />
+    <Content Include="academics-master\scss\bootstrap\_code.scss" />
+    <Content Include="academics-master\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="academics-master\scss\bootstrap\_dropdown.scss" />
+    <Content Include="academics-master\scss\bootstrap\_forms.scss" />
+    <Content Include="academics-master\scss\bootstrap\_functions.scss" />
+    <Content Include="academics-master\scss\bootstrap\_grid.scss" />
+    <Content Include="academics-master\scss\bootstrap\_images.scss" />
+    <Content Include="academics-master\scss\bootstrap\_input-group.scss" />
+    <Content Include="academics-master\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="academics-master\scss\bootstrap\_list-group.scss" />
+    <Content Include="academics-master\scss\bootstrap\_media.scss" />
+    <Content Include="academics-master\scss\bootstrap\_mixins.scss" />
+    <Content Include="academics-master\scss\bootstrap\_modal.scss" />
+    <Content Include="academics-master\scss\bootstrap\_nav.scss" />
+    <Content Include="academics-master\scss\bootstrap\_navbar.scss" />
+    <Content Include="academics-master\scss\bootstrap\_pagination.scss" />
+    <Content Include="academics-master\scss\bootstrap\_popover.scss" />
+    <Content Include="academics-master\scss\bootstrap\_print.scss" />
+    <Content Include="academics-master\scss\bootstrap\_progress.scss" />
+    <Content Include="academics-master\scss\bootstrap\_reboot.scss" />
+    <Content Include="academics-master\scss\bootstrap\_root.scss" />
+    <Content Include="academics-master\scss\bootstrap\_tables.scss" />
+    <Content Include="academics-master\scss\bootstrap\_tooltip.scss" />
+    <Content Include="academics-master\scss\bootstrap\_transitions.scss" />
+    <Content Include="academics-master\scss\bootstrap\_type.scss" />
+    <Content Include="academics-master\scss\bootstrap\_utilities.scss" />
+    <Content Include="academics-master\scss\bootstrap\_variables.scss" />
+    <Content Include="academics-master\scss\style.scss" />
+    <Content Include="academics-master\scss\_site-base.scss" />
+    <Content Include="academics-master\scss\_site-blocks.scss" />
+    <Content Include="academics-master\scss\_site-navbar.scss" />
+    <Content Include="dash\lib\owlcarousel\LICENSE" />
+    <Content Include="dash\scss\bootstrap.scss" />
+    <Content Include="dash\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="dash\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="dash\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="dash\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="dash\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="dash\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="dash\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="dash\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="dash\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_card.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_close.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_images.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_root.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_type.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="dash\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\sweetalert\sweet-alert.less" />
+    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
+    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sweetalert-dev.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Styles\sweetalert.css" />
+    <Content Include="Views\Home\HtmlPage1.html" />
+    <Content Include="Views\Shared\pay.css" />
+    <Content Include="Content\pay2.css" />
+    <Content Include="Views\Students\pay2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_navAndFooter.cshtml" />
+    <Content Include="Views\Shared\_nav.cshtml" />
+    <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Dashboard1.cshtml" />
+    <Content Include="Views\Faculties\Create.cshtml" />
+    <Content Include="Views\Faculties\Delete.cshtml" />
+    <Content Include="Views\Faculties\Details.cshtml" />
+    <Content Include="Views\Faculties\Edit.cshtml" />
+    <Content Include="Views\Faculties\Index.cshtml" />
+    <Content Include="Views\Faculties\_ViewStart.cshtml" />
+    <Content Include="Views\Majors\Create.cshtml" />
+    <Content Include="Views\Majors\Delete.cshtml" />
+    <Content Include="Views\Majors\Details.cshtml" />
+    <Content Include="Views\Majors\Edit.cshtml" />
+    <Content Include="Views\Majors\Index.cshtml" />
+    <Content Include="Views\Majors\_ViewStart.cshtml" />
+    <Content Include="Views\Cours\Create.cshtml" />
+    <Content Include="Views\Cours\Delete.cshtml" />
+    <Content Include="Views\Cours\Details.cshtml" />
+    <Content Include="Views\Cours\Edit.cshtml" />
+    <Content Include="Views\Cours\Index.cshtml" />
+    <Content Include="Views\Cours\_ViewStart.cshtml" />
+    <Content Include="Views\Home\register.cshtml" />
+    <Content Include="Views\AspNetUsers\Create.cshtml" />
+    <Content Include="Views\AspNetUsers\Delete.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Edit.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\Shared\_dropMajor.cshtml" />
+    <Content Include="Views\AspNetUsers\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_acceptedStudent.cshtml" />
+    <Content Include="Views\Delays\Create.cshtml" />
+    <Content Include="Views\Delays\Delete.cshtml" />
+    <Content Include="Views\Delays\Details.cshtml" />
+    <Content Include="Views\Delays\Edit.cshtml" />
+    <Content Include="Views\Delays\Index.cshtml" />
+    <Content Include="Views\Delays\_ViewStart.cshtml" />
+    <Content Include="Views\Times\Create.cshtml" />
+    <Content Include="Views\Times\Delete.cshtml" />
+    <Content Include="Views\Times\Details.cshtml" />
+    <Content Include="Views\Times\Edit.cshtml" />
+    <Content Include="Views\Times\Index.cshtml" />
+    <Content Include="Views\Times\_ViewStart.cshtml" />
+    <Content Include="Views\Payments\Create.cshtml" />
+    <Content Include="Views\Payments\Delete.cshtml" />
+    <Content Include="Views\Payments\Details.cshtml" />
+    <Content Include="Views\Payments\Edit.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\Payments\_ViewStart.cshtml" />
+    <Content Include="Views\Students\pay2.cshtml" />
+    <Content Include="Views\Students\delay.cshtml" />
+    <Content Include="Views\Students\CourseRegist.cshtml" />
+    <Content Include="Views\Students\courseScudule.cshtml" />
+    <Content Include="Views\AspNetUsers\Details1.cshtml" />
+    <Content Include="Views\Cours\Usercourses.cshtml" />
+    <Content Include="Views\Shared\_DashBoardUser.cshtml" />
+    <Content Include="Views\Majors\Index1.cshtml" />
+    <Content Include="Views\Majors\detailMajors.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\AspNetUsers\Logout.cshtml" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
+    <Content Include="Views\Students\statistics.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="cleopatra\.git\objects\info\" />
+    <Folder Include="cleopatra\.git\objects\pack\" />
+    <Folder Include="cleopatra\.git\refs\tags\" />
+    <Folder Include="image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57896</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44370/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

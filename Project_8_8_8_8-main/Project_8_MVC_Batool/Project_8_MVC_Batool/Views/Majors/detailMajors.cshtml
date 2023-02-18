@@ -1,0 +1,39 @@
+﻿@model Project_8_MVC_Batool.Major
+
+
+@{
+    Layout = "~/Views/Shared/_navAndFooter.cshtml";
+
+}
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <p>
+                    <img src="~/image/5.png" alt="Image" class="img-fluid">
+                </p>
+            </div>
+            <div class="col-lg-5 ml-auto align-self-center">
+                <h2 class="section-title-underline mb-5">
+                    <span>Major Details</span>
+                </h2>
+                <div >
+                    <p style="display:inline-block"><strong class="text-black d-block" style="display:inline-block">Major:</strong> @Model.MajorName</p>
+                    <p class="mb-5"><strong class="text-black d-block">Price Of Hour:</strong> @Model.Price_OfHour JD</p>
+                </div>
+                <p style="display:inline-block"><strong class="text-black d-block">Major:</strong> @Model.MajorName</p>
+                <p class="mb-5"><strong class="text-black d-block">Number Of Hour:</strong> @Model.Number_OfHour</p>
+                <p class="mb-5"><strong class="text-black d-block">Minimum Rate:</strong> @Model.minimum_rate</p>
+                <p class="mb-5"><strong class="text-black d-block">Description:</strong> @Model.Major_Description</p>
+            
+
+                <p style="border-radius:12px">
+                    <a href="https://localhost:44370/Account/Register" class="btn btn-primary rounded-0 btn-lg px-5">Register Now</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c581838b10e04d8490d0401fc4fc3cf8" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="Project_8Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Project_8Model.AspNetRole" Width="1.5" PointX="5.25" PointY="17.75" />
+        <EntityTypeShape EntityType="Project_8Model.AspNetUserClaim" Width="1.5" PointX="7.5" PointY="21.375" />
+        <EntityTypeShape EntityType="Project_8Model.AspNetUserLogin" Width="1.5" PointX="7.5" PointY="7.5" />
+        <EntityTypeShape EntityType="Project_8Model.AspNetUserRole" Width="1.5" PointX="7.5" PointY="11.625" />
+        <EntityTypeShape EntityType="Project_8Model.AspNetUser" Width="1.5" PointX="5.25" PointY="9" />
+        <EntityTypeShape EntityType="Project_8Model.Cours" Width="1.5" PointX="5.25" PointY="4.625" />
+        <EntityTypeShape EntityType="Project_8Model.Delay" Width="1.5" PointX="7.5" PointY="18.375" />
+        <EntityTypeShape EntityType="Project_8Model.Faculty" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="Project_8Model.InRolement" Width="1.5" PointX="9.75" PointY="9.25" />
+        <EntityTypeShape EntityType="Project_8Model.Major" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="Project_8Model.Payment" Width="1.5" PointX="7.5" PointY="15.75" />
+        <EntityTypeShape EntityType="Project_8Model.rahma" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Project_8Model.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Project_8Model.Time" Width="1.5" PointX="7.5" PointY="4.625" />
+        <AssociationConnector Association="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" />
+        <AssociationConnector Association="Project_8Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Project_8Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Project_8Model.FK_AspNetUsers_Majors" />
+        <AssociationConnector Association="Project_8Model.FK_Delay_AspNetUsers" />
+        <AssociationConnector Association="Project_8Model.FK_InRolement_AspNetUsers" />
+        <AssociationConnector Association="Project_8Model.FK_Payments_AspNetUsers" />
+        <AssociationConnector Association="Project_8Model.FK__Courses__Major_I__4F7CD00D" />
+        <AssociationConnector Association="Project_8Model.FK_Time_Courses" />
+        <AssociationConnector Association="Project_8Model.FK__Majors__Faculity__4CA06362" />
+        <AssociationConnector Association="Project_8Model.FK_InRolement_Times" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

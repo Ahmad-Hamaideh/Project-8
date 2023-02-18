@@ -1,0 +1,123 @@
+﻿@model Project_8_MVC_Batool.AspNetUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color: #51be78">Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p >@Html.DisplayNameFor(model => model.Email)</p>
+        </dt>
+
+        <dd>
+            <p > @Html.DisplayFor(model => model.Email) </p>
+        </dd>
+
+
+
+
+
+
+        <dt>
+            <p > @Html.DisplayNameFor(model => model.PhoneNumber)</p>
+        </dt>
+
+        <dd>
+            <p>   @Html.DisplayFor(model => model.PhoneNumber) </p>
+        </dd>
+
+
+
+
+
+
+        <dt >
+            <p>  @Html.DisplayNameFor(model => model.UserName) </p>
+
+
+        <dd>
+            <p >      @Html.DisplayFor(model => model.UserName)
+        </dd>
+        </dt>
+        <dt>
+            <p>     @Html.DisplayNameFor(model => model.UserImage) </p>
+        </dt>
+
+        <dd>
+            <p> <img src="~/image/@Model.UserImage" width="50" height="50" /> </p> 
+        </dd>
+
+        <dt>
+            <p >    @Html.DisplayNameFor(model => model.Tawjihi_Image) </p>
+</dt>
+
+        <dd>
+            <p style="margin-left:10px"> <img  src="~/image/@Model.Tawjihi_Image" width="50" height="50"/> </p>
+</dd>
+
+        <dt>
+            <p >     @Html.DisplayNameFor(model => model.SSN) </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSN)
+        </dd>
+
+        <dt>
+            <p >    @Html.DisplayNameFor(model => model.Year_OfStudy) </p>
+        </dt>
+
+        <dd>
+            <p >    @Html.DisplayFor(model => model.Year_OfStudy) </p>
+        </dd>
+
+        <dt>
+            <p >   @Html.DisplayNameFor(model => model.GPA) </p>
+        </dt>
+
+        <dd>
+            <p>    @Html.DisplayFor(model => model.GPA) </p>
+        </dd>
+
+
+
+        <dt>
+            <p >   Stutus </p>
+        </dt>
+
+        <dd>
+            @if (Model.Is_Send == null)
+            {
+                @Html.Label("pending")
+            }
+            else if (Model.Is_Send == 1)
+            {
+                @Html.Label("Accepted")
+            }
+            else
+            {
+                @Html.Label("Rejected")
+            }
+        </dd>
+
+        <dt>
+            <p >  @Html.DisplayNameFor(model => model.Major.MajorName)</p>
+        </dt>
+
+        <dd>
+            <p >    @Html.DisplayFor(model => model.Major.MajorName) </p>
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+
+    <a href="/AspNetUsers/Edit/@Model.Id" style=" color: #51be78">Accept</a>
+    <a href="/AspNetUsers/Index" style=" color: #51be78">Back to List</a>
+</p>

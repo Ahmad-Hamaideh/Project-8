@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.AspNetUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<h2 style="color: #51be78">Application for the University </h2>
+
+<br />
+<br />
+
+<table class="table table-active table-striped ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+       
+        
+        
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+       
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Send)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major.MajorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        
+       
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.SSN)
+        </td>
+        
+       
+        <td>
+            @if (item.Is_Send == null)
+            {
+               <label>Pending</label>
+            }
+            else if (item.Is_Send == 1)
+            {
+                <label style="color:green">Accepted</label>
+            }
+            else
+            {
+               <label style="color:red">Rejected</label>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major.MajorName)
+        </td>
+        <td>
+
+            <a href="/AspNetUsers/Edit/@item.Id" style=" color: white" class = "btn btn-success" >Edit </a> |
+            <a href="/AspNetUsers/Details/@item.Id" style=" color: white" class = "btn btn-info" >Details</a>
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<h2 style=" color: #51be78">Payment of Students</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            Student's Email
+        </th>
+        <th>
+            Amount Payment
+        </th>
+        <th>
+            Number of Payment
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Money_Payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_OfPayment)
+        </td>
+
+    </tr>
+}
+
+</table>

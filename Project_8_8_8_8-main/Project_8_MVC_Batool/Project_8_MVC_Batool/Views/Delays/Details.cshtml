@@ -1,0 +1,77 @@
+﻿@model Project_8_MVC_Batool.Delay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+
+<h2 style="color: #51be78">Details Of Delay</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.stutus_ofDelay)
+        </dt>
+
+        <dd>
+            @if (Model.AspNetUser.stutus_ofDelay == 0)
+            {
+                <span>Pending</span>
+            }
+            else if (Model.AspNetUser.stutus_ofDelay == 1)
+            {
+                <span style="color:green">Accepted</span>
+            }
+            else if (Model.AspNetUser.stutus_ofDelay == 2)
+            {
+                <span style="color:red">Rejected</span>
+            }
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Delay_Hour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Delay_Hour)
+        </dd>
+
+        <br />
+        <dt>
+          Reason
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+        <br />
+
+
+
+    </dl>
+</div>
+<p>
+    <a href="/Delays/Edit/@Model.ID_Delay" style=" color: #51be78">Edit</a>
+    <a href="/Delays/Index" style=" color: #51be78">Back to List</a>
+</p>

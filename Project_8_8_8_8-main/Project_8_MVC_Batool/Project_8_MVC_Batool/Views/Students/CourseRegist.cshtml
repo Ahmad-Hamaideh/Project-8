@@ -1,0 +1,150 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.Cours>
+<br />
+<br />
+
+
+<head>
+    <script src="path/to/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert/dist/sweetalert.css">
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="path/to/sweetalert.css">
+    <script src="path/to/sweetalert.min.js"></script>
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    <link href="~/Styles/sweetalert.css" rel="stylesheet" />
+
+    <style>
+        #conf {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            box-shadow: 5px 5px 10px gray;
+            padding: 100px 200px;
+            border-radius: 20px;
+            transform: translate(-50%,-50%);
+            background-color:white;
+            cursor:pointer;
+        }
+            #conf span {
+             position:absolute;
+             top:0;
+             right:0;
+             padding:10px;
+             background-color:black;
+             border-radius:50%;
+             transform:translate(50%,-50%);
+            }
+    </style>
+</head>
+
+
+<div id="conf"> Time Conflict <span id="exit">X</span></div>
+@if (TempData["Message"] != null)
+{
+
+
+    <script>
+        document.getElementById("conf").style.display = "block";
+        document.getElementById("exit").onclick = () => {
+            console.log("zsgzsdg")
+            document.getElementById("conf").style.display = "none";
+        }
+      
+       /* alert("You are register this course before");*/
+    </script>
+}
+
+
+@if (TempData["notEnough"] !=null)
+
+            {
+      <script>
+        alert("You are register this course before");
+    </script>
+
+            }
+<div class="container col-8" style="width:82%!important ; margin:20px 50px ">
+
+
+    @{
+        ViewBag.Title = "CourseRegist";
+        Layout = "~/Views/Shared/_DashBoardUser.cshtml";
+
+    }
+    <style>
+        table tr td {
+            width: 100px;
+        }
+    </style>
+
+    @{
+
+        if (ViewBag.message == null)
+        {
+            <script>
+            @*$(function() {
+            swal("@TempData["Message"]");
+        });*@
+
+            alert(TempData["Message"]);
+            </script>
+        }
+    }
+
+    <h1>@TempData["Message"]</h1>
+    @Html.Action("courseScudule")
+    <br /><br />
+    <h3>Courses</h3>
+    <br />
+    <table class="table table-striped " border="1">
+        <tr>
+            <th>
+                Course Name
+            </th>
+
+            <th>
+                course Time
+            </th>
+            <th>
+                course Day
+            </th>
+
+            <th>
+                Add course
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            int r = item.Times.Count() + 1;
+            <table class="table ">
+                <tr>
+                    <td rowspan="@r">
+                        @Html.DisplayFor(modelItem => item.CourseName)
+
+                    </td>
+                </tr>
+
+                @foreach (var sec in item.Times.ToList())
+                {
+                    <tr>
+
+                        <td>
+                            @sec.Course_Time
+                        </td>
+                        <td>
+                            @sec.Course_Day
+                        </td>
+                        <td>
+                            <a href="AddCourse?secId=@sec.TimeID" class="btn btn-primary">add </a>
+                        </td>
+                    </tr>
+
+                }
+            </table>
+
+        }
+
+    </table>
+
+</div>

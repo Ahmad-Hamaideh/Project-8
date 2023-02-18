@@ -1,0 +1,69 @@
+﻿@model Project_8_MVC_Batool.Delay
+@{ 
+    Layout = "~/Views/Shared/_DashBoardUser.cshtml";
+
+}
+
+
+<div style="margin:50px 0">
+    <h2>
+        <span style="color: mediumseagreen">
+            Request
+        </span>   <br /> <small> for postponement  </small>
+    </h2>
+</div>
+
+
+
+@using (Html.BeginForm("delay", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <form>
+        <div class="container-fluid " style="margin:0">
+            <div class="form-group row">
+                <label for="Description" class="col-3 col-form-label">
+                    The reason for the delay
+                </label>
+                <div class="col-8">
+                    <textarea required id="Description" name="Description" cols="40" rows="5" class="form-control"></textarea>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label for="textarea" class="col-3 col-form-label">Semester</label>
+                <div class="col-8">
+
+                    <select required style="border:solid 0.3px ;padding : 10px" id="Semester" name="Semester" class=" btn  dropdown-toggle">
+                        <option value="1">First season</option>
+                        <option value="2">
+                            Second season
+                        </option>
+                        <option value="3">
+                            Summer season
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <label for="Delay_Hour" class="col-3 col-form-label">
+                    The number of hours
+                </label>
+                <div class="col-8">
+                    <input id="Delay_Hour" name="Delay_Hour" type="number" required class="form-control">
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <div class="offset-3 col-8">
+                    <button style="background: mediumseagreen ; color:white " name="submit" type="submit" class=" col-3 btn ">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+}

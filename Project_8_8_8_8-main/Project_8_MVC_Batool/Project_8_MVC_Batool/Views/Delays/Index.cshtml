@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.Delay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+ <br />
+</p>
+<table class="table">
+    <tr>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th>
+           <span>Delay Hours</span>
+        </th>
+        <th>
+            <span>Status</span>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Delay_Hour)
+        </td>
+
+        <td>
+            @if (item.AspNetUser.stutus_ofDelay == 0)
+            {
+                <span>Pending</span>
+            }
+            else if (item.AspNetUser.stutus_ofDelay == 1)
+            {
+                <label style="color:green">Accepted</label>
+            }
+            else if (item.AspNetUser.stutus_ofDelay == 2)
+            {
+        <label style="color:red">Rejected</label>
+            }
+        </td>
+
+
+
+        <td>
+            <a href="/Delays/Edit/@item.ID_Delay" style=" color: white" class = "btn btn-success" >Edit</a>
+            <a href="/Delays/Details/@item.ID_Delay" style=" color: white" class = "btn btn-info" >Details</a>
+
+        </td>
+    </tr>
+}
+
+</table>

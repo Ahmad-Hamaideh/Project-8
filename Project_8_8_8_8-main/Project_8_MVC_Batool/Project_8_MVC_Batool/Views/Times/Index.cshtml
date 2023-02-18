@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Project_8_MVC_Batool.Time>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<h2 style=" color: #51be78">Scheduled Times</h2>
+
+<p>
+    @Html.ActionLink("Create New time", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course_Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cours.CourseName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course_Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cours.CourseName)
+        </td>
+        <td>
+
+            <a href="/Times/Edit/@item.TimeID" style=" color: white" class = "btn btn-success" >Edit</a> |
+            <a href="/Times/Details/@item.TimeID" style=" color: white" class = "btn btn-info">Details</a> |
+
+            <a href="/Times/Delete/@item.TimeID" style=" color: white" class = "btn btn-danger">Delete</a>
+      
+        </td>
+    </tr>
+}
+
+</table>

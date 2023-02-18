@@ -1,0 +1,44 @@
+﻿@model Project_8_MVC_Batool.Time
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br /><br />
+
+<div>
+    <h4 style=" color: #51be78">Detail Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            Course Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course_Time)
+        </dd>
+        <br />
+        <dt>
+            Course Day
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course_Day)
+        </dd>
+        <br />
+        <dt>
+            Course Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cours.CourseName)
+        </dd>
+        <br />
+    </dl>
+</div>
+<p>
+    <a href="/Times/Edit/@Model.TimeID" style=" color: #51be78">Edit</a> |
+    <a href="/Times/Index/@Model.TimeID" style=" color: #51be78">Back to List</a>
+</p>

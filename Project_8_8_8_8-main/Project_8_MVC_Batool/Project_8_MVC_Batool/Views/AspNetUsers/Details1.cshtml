@@ -1,0 +1,49 @@
+﻿@model Project_8_MVC_Batool.AspNetUser
+
+
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DashBoardUser.cshtml";
+
+}
+
+
+<style>
+    p {
+        font-weight: 700;
+    }
+</style>
+<div style="width:80%">
+    <br /> <br />
+    <h4>Student Information</h4>
+    <hr />
+    <div style="display: flex; justify-content: center;"> <img style="width: 200px;height:200px; border-radius: 50%;" src="~/image/@Model.UserImage" alt="image" /> </div>
+
+    <br /> <br />
+
+    <table class="table table-striped">
+        <tr>
+            <td><p>Name</p></td>
+            <td> @Html.DisplayFor(model => model.FullName)</td>
+        </tr>
+        <tr>
+            <td><p>Phone Number</p></td>
+            <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td><p>Email</p></td>
+            <td> @Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <td><p>Major</p></td>
+            <td>@Html.DisplayFor(model => model.Major.MajorName)</td>
+        </tr>
+        <tr>
+            <td><p>Certificate year</p></td>
+            <td>@Html.DisplayFor(model => model.Year_OfStudy)</td>
+        </tr>
+
+    </table>
+</div>

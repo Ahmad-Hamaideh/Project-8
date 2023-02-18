@@ -1,0 +1,79 @@
+﻿@model Project_8_MVC_Batool.Delay
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+@using (Html.BeginForm("Edit", "Delays", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+<div class="form-horizontal">
+    <h4 style=" color: #51be78">Delay Application</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID_Delay)
+
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.User_ID, "User ID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("User_ID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.User_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+           <input  type="text"  placeholder="@Model.Description"  id="q" disabled class="form-control"/>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Semester, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text"   placeholder="@Model.Semester" id="q1" disabled class="form-control" />
+        </div>
+    </div>
+
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Delay_Hour, "Delay Hours", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text"  placeholder="@Model.Delay_Hour" id="q2" disabled class="form-control"/>
+        </div>
+    </div>
+
+
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.AspNetUser.stutus_ofDelay, "Stutus of Delay", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(Model => Model.AspNetUser.stutus_ofDelay, 1)
+            <span>Accept</span>
+            @Html.RadioButtonFor(Model => Model.AspNetUser.stutus_ofDelay, 2)
+            <span>Reject</span>
+        </div>
+    </div>
+
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" style="background-color: #51be78 ; color:white" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    <a href="/Delays/Index" style=" color: #51be78">Back to List</a>
+</div>
+

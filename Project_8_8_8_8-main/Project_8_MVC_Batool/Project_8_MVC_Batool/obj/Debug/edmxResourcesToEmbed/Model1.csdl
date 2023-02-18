@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_8Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Project_8Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Project_8Model.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Project_8Model.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Project_8Model.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Project_8Model.AspNetUserLogin" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Project_8Model.AspNetUserRole" />
+    <EntitySet Name="AspNetUsers" EntityType="Project_8Model.AspNetUser" />
+    <EntitySet Name="Courses" EntityType="Project_8Model.Cours" />
+    <EntitySet Name="Delays" EntityType="Project_8Model.Delay" />
+    <EntitySet Name="Faculties" EntityType="Project_8Model.Faculty" />
+    <EntitySet Name="InRolements" EntityType="Project_8Model.InRolement" />
+    <EntitySet Name="Majors" EntityType="Project_8Model.Major" />
+    <EntitySet Name="Payments" EntityType="Project_8Model.Payment" />
+    <EntitySet Name="rahmas" EntityType="Project_8Model.rahma" />
+    <EntitySet Name="sysdiagrams" EntityType="Project_8Model.sysdiagram" />
+    <EntitySet Name="Times" EntityType="Project_8Model.Time" />
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRole" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Project_8Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Project_8Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRole" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUsers_Majors" Association="Project_8Model.FK_AspNetUsers_Majors">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Delay_AspNetUsers" Association="Project_8Model.FK_Delay_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="Delay" EntitySet="Delays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InRolement_AspNetUsers" Association="Project_8Model.FK_InRolement_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="InRolement" EntitySet="InRolements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_AspNetUsers" Association="Project_8Model.FK_Payments_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Courses__Major_I__4F7CD00D" Association="Project_8Model.FK__Courses__Major_I__4F7CD00D">
+      <End Role="Major" EntitySet="Majors" />
+      <End Role="Cours" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Time_Courses" Association="Project_8Model.FK_Time_Courses">
+      <End Role="Cours" EntitySet="Courses" />
+      <End Role="Time" EntitySet="Times" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Majors__Faculity__4CA06362" Association="Project_8Model.FK__Majors__Faculity__4CA06362">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Major" EntitySet="Majors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InRolement_Times" Association="Project_8Model.FK_InRolement_Times">
+      <End Role="Time" EntitySet="Times" />
+      <End Role="InRolement" EntitySet="InRolements" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserRoles" Relationship="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetRole" ToRole="AspNetUserRole" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="AspNetRole" Relationship="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" FromRole="AspNetUserRole" ToRole="AspNetRole" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUserRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Tawjihi_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SSN" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="Year_OfStudy" Type="Int32" />
+    <Property Name="GPA" Type="Double" />
+    <Property Name="Is_Save" Type="Int32" />
+    <Property Name="Is_Send" Type="Int32" />
+    <Property Name="Major_id" Type="Int32" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stutus_ofDelay" Type="Int32" />
+    <Property Name="Stutus_OfPayment" Type="Int32" />
+    <Property Name="debet" Type="Double" />
+    <Property Name="Balance" Type="Double" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Project_8Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Project_8Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="AspNetUserRoles" Relationship="Project_8Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserRole" />
+    <NavigationProperty Name="Major" Relationship="Project_8Model.FK_AspNetUsers_Majors" FromRole="AspNetUser" ToRole="Major" />
+    <NavigationProperty Name="Delays" Relationship="Project_8Model.FK_Delay_AspNetUsers" FromRole="AspNetUser" ToRole="Delay" />
+    <NavigationProperty Name="InRolements" Relationship="Project_8Model.FK_InRolement_AspNetUsers" FromRole="AspNetUser" ToRole="InRolement" />
+    <NavigationProperty Name="Payments" Relationship="Project_8Model.FK_Payments_AspNetUsers" FromRole="AspNetUser" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Number_OfHour" Type="Int32" />
+    <Property Name="Major_ID" Type="Int32" />
+    <NavigationProperty Name="Major" Relationship="Project_8Model.FK__Courses__Major_I__4F7CD00D" FromRole="Cours" ToRole="Major" />
+    <NavigationProperty Name="Times" Relationship="Project_8Model.FK_Time_Courses" FromRole="Cours" ToRole="Time" />
+  </EntityType>
+  <EntityType Name="Delay">
+    <Key>
+      <PropertyRef Name="ID_Delay" />
+    </Key>
+    <Property Name="ID_Delay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="User_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Semester" Type="Int32" />
+    <Property Name="Delay_Hour" Type="Int32" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_Delay_AspNetUsers" FromRole="Delay" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="FaculityID" />
+    </Key>
+    <Property Name="FaculityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FaculityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Faculity_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Faculity_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Majors" Relationship="Project_8Model.FK__Majors__Faculity__4CA06362" FromRole="Faculty" ToRole="Major" />
+  </EntityType>
+  <EntityType Name="InRolement">
+    <Key>
+      <PropertyRef Name="Course_Student_Id" />
+    </Key>
+    <Property Name="Course_Student_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_ID" Type="Int32" />
+    <Property Name="Time_ID" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_InRolement_AspNetUsers" FromRole="InRolement" ToRole="AspNetUser" />
+    <NavigationProperty Name="Time" Relationship="Project_8Model.FK_InRolement_Times" FromRole="InRolement" ToRole="Time" />
+  </EntityType>
+  <EntityType Name="Major">
+    <Key>
+      <PropertyRef Name="MajorID" />
+    </Key>
+    <Property Name="MajorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MajorName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MajorImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Major_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Price_OfHour" Type="Int32" />
+    <Property Name="Number_OfHour" Type="Int32" />
+    <Property Name="Faculity_ID" Type="Int32" />
+    <Property Name="minimum_rate" Type="Double" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Project_8Model.FK_AspNetUsers_Majors" FromRole="Major" ToRole="AspNetUser" />
+    <NavigationProperty Name="Courses" Relationship="Project_8Model.FK__Courses__Major_I__4F7CD00D" FromRole="Major" ToRole="Cours" />
+    <NavigationProperty Name="Faculty" Relationship="Project_8Model.FK__Majors__Faculity__4CA06362" FromRole="Major" ToRole="Faculty" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_ID" />
+    </Key>
+    <Property Name="Payment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Money_Payment" Type="Double" />
+    <Property Name="Number_OfPayment" Type="Int32" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Project_8Model.FK_Payments_AspNetUsers" FromRole="Payment" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="rahma">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Time">
+    <Key>
+      <PropertyRef Name="TimeID" />
+    </Key>
+    <Property Name="TimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Course_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseID" Type="Int32" />
+    <NavigationProperty Name="Cours" Relationship="Project_8Model.FK_Time_Courses" FromRole="Time" ToRole="Cours" />
+    <NavigationProperty Name="InRolements" Relationship="Project_8Model.FK_InRolement_Times" FromRole="Time" ToRole="InRolement" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Type="Project_8Model.AspNetRole" Role="AspNetRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Project_8Model.AspNetUserRole" Role="AspNetUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Project_8Model.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Project_8Model.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Project_8Model.AspNetUserRole" Role="AspNetUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUsers_Majors">
+    <End Type="Project_8Model.Major" Role="Major" Multiplicity="0..1" />
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="MajorID" />
+      </Principal>
+      <Dependent Role="AspNetUser">
+        <PropertyRef Name="Major_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Delay_AspNetUsers">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+    <End Type="Project_8Model.Delay" Role="Delay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delay">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InRolement_AspNetUsers">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+    <End Type="Project_8Model.InRolement" Role="InRolement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InRolement">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_AspNetUsers">
+    <End Type="Project_8Model.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+    <End Type="Project_8Model.Payment" Role="Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Courses__Major_I__4F7CD00D">
+    <End Type="Project_8Model.Major" Role="Major" Multiplicity="0..1" />
+    <End Type="Project_8Model.Cours" Role="Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Major">
+        <PropertyRef Name="MajorID" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="Major_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Time_Courses">
+    <End Type="Project_8Model.Cours" Role="Cours" Multiplicity="0..1" />
+    <End Type="Project_8Model.Time" Role="Time" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cours">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="Time">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Majors__Faculity__4CA06362">
+    <End Type="Project_8Model.Faculty" Role="Faculty" Multiplicity="0..1" />
+    <End Type="Project_8Model.Major" Role="Major" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="FaculityID" />
+      </Principal>
+      <Dependent Role="Major">
+        <PropertyRef Name="Faculity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InRolement_Times">
+    <End Type="Project_8Model.Time" Role="Time" Multiplicity="0..1" />
+    <End Type="Project_8Model.InRolement" Role="InRolement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Time">
+        <PropertyRef Name="TimeID" />
+      </Principal>
+      <Dependent Role="InRolement">
+        <PropertyRef Name="Time_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
